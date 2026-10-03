@@ -1,0 +1,87 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.13.15, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\HishamM2\OneDrive - Vodafone Group\Desktop\ai-review-bot\backend\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\HishamM2\OneDrive - Vodafone Group\Desktop\ai-review-bot\backend
+configfile: pytest.ini
+plugins: anyio-4.15.1, asyncio-1.4.0, cov-7.1.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 51 items
+
+tests/test_api.py::test_api_review_ok PASSED                             [  1%]
+tests/test_api.py::test_standards_get_and_put PASSED                     [  3%]
+tests/test_api.py::test_reviews_endpoint_returns_list PASSED             [  5%]
+tests/test_api.py::test_simulate_state PASSED                            [  7%]
+tests/test_clients.py::test_llm_success PASSED                           [  9%]
+tests/test_clients.py::test_llm_429_raises_rate_limit PASSED             [ 11%]
+tests/test_clients.py::test_llm_http_error_raises_unavailable PASSED     [ 13%]
+tests/test_clients.py::test_llm_timeout_raises_unavailable PASSED        [ 15%]
+tests/test_clients.py::test_llm_retries_then_succeeds PASSED             [ 17%]
+tests/test_clients.py::test_get_diff_ok PASSED                           [ 19%]
+tests/test_clients.py::test_get_diff_http_error PASSED                   [ 21%]
+tests/test_clients.py::test_get_diff_network_error PASSED                [ 23%]
+tests/test_clients.py::test_post_review_ok PASSED                        [ 25%]
+tests/test_clients.py::test_post_review_422_falls_back_to_summary PASSED [ 27%]
+tests/test_clients.py::test_post_review_server_error PASSED              [ 29%]
+tests/test_diff_parser.py::test_parses_all_files PASSED                  [ 31%]
+tests/test_diff_parser.py::test_language_detection PASSED                [ 33%]
+tests/test_diff_parser.py::test_typescript_detected_and_reviewable PASSED [ 35%]
+tests/test_diff_parser.py::test_line_numbers_for_added_lines PASSED      [ 37%]
+tests/test_diff_parser.py::test_skips_lockfiles_and_binaries PASSED      [ 39%]
+tests/test_diff_parser.py::test_new_and_deleted_file_flags PASSED        [ 41%]
+tests/test_diff_parser.py::test_chunking_splits_on_budget PASSED         [ 43%]
+tests/test_diff_parser.py::test_chunking_keeps_all_in_one_when_budget_is_large PASSED [ 45%]
+tests/test_diff_parser.py::test_empty_diff PASSED                        [ 47%]
+tests/test_github_prompt.py::test_format_comment_includes_rule_and_suggestion PASSED [ 49%]
+tests/test_github_prompt.py::test_summary_reports_failed_chunks PASSED   [ 50%]
+tests/test_github_prompt.py::test_summary_counts_issues PASSED           [ 52%]
+tests/test_github_prompt.py::test_prompt_marks_diff_as_untrusted PASSED  [ 54%]
+tests/test_github_prompt.py::test_prompt_without_rules_has_default PASSED [ 56%]
+tests/test_github_prompt.py::test_typescript_rules_in_prompt PASSED      [ 58%]
+tests/test_github_prompt.py::test_build_user_prompt_renders_each_file PASSED [ 60%]
+tests/test_reviewer.py::test_valid_comment_kept PASSED                   [ 62%]
+tests/test_reviewer.py::test_invalid_line_dropped PASSED                 [ 64%]
+tests/test_reviewer.py::test_duplicates_removed PASSED                   [ 66%]
+tests/test_reviewer.py::test_reprompt_on_bad_json PASSED                 [ 68%]
+tests/test_reviewer.py::test_llm_failure_degrades_gracefully PASSED      [ 70%]
+tests/test_reviewer.py::test_ignored_path_skipped PASSED                 [ 72%]
+tests/test_reviewer.py::test_fenced_json_parsed PASSED                   [ 74%]
+tests/test_reviewer.py::test_invalid_output_raises PASSED                [ 76%]
+tests/test_reviewer.py::test_empty_output_raises PASSED                  [ 78%]
+tests/test_reviewer.py::test_standards_invalid_yaml PASSED               [ 80%]
+tests/test_reviewer.py::test_standards_rules_for PASSED                  [ 82%]
+tests/test_reviewer.py::test_standards_missing_file_falls_back_to_default PASSED [ 84%]
+tests/test_reviewer.py::test_llm_client_retries_then_raises PASSED       [ 86%]
+tests/test_webhook.py::test_bad_signature PASSED                         [ 88%]
+tests/test_webhook.py::test_non_pr_event_ignored PASSED                  [ 90%]
+tests/test_webhook.py::test_closed_action_ignored PASSED                 [ 92%]
+tests/test_webhook.py::test_duplicate_delivery PASSED                    [ 94%]
+tests/test_webhook.py::test_health_and_simulate_toggle PASSED            [ 96%]
+tests/test_webhook.py::test_api_review_bad_standards PASSED              [ 98%]
+tests/test_webhook.py::test_process_pr_success_and_github_failure PASSED [100%]
+
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\HishamM2\OneDrive - Vodafone Group\Desktop\ai-review-bot\backend\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.13.15-final-0 _______________
+
+Name                    Stmts   Miss  Cover   Missing
+-----------------------------------------------------
+app\__init__.py             0      0   100%
+app\config.py              14      0   100%
+app\diff_parser.py         98      3    97%   81, 103, 120
+app\errors.py               8      0   100%
+app\github_client.py       47      3    94%   18, 56-57
+app\llm_client.py          42      4    90%   49-51, 53
+app\main.py                56      0   100%
+app\prompt_builder.py      13      0   100%
+app\reviewer.py            67      0   100%
+app\standards.py           26      0   100%
+app\store.py                3      0   100%
+app\webhook.py             46      0   100%
+-----------------------------------------------------
+TOTAL                     420     10    98%
+======================== 51 passed, 1 warning in 1.59s ========================

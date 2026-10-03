@@ -1,0 +1,19 @@
+global_rules:
+  - {id: G1, description: "No hardcoded secrets, passwords or API keys", severity: error}
+  - {id: G2, description: "Functions should not exceed 40 lines", severity: warning}
+languages:
+  python:
+    - {id: PY1, description: "Public functions need type hints and docstrings", severity: warning}
+    - {id: PY2, description: "No bare except clauses", severity: error}
+  javascript:
+    - {id: JS1, description: "Use const/let, never var", severity: warning}
+    - {id: JS2, description: "No console.log in production code", severity: info}
+  java:
+    - {id: JV1, description: "Close resources with try-with-resources", severity: error}
+  typescript:
+    - {id: TS1, description: "Do not use the any type", severity: warning}
+    - {id: TS2, description: "Function parameters and return values need explicit types", severity: warning}
+    - {id: TS3, description: "No empty catch blocks", severity: error}
+    - {id: TS4, description: "Use const/let, never var", severity: warning}
+    - {id: TS5, description: "No console.log in production code", severity: info}
+ignore_paths: ["tests/", "migrations/"]

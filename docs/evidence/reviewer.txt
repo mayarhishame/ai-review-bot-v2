@@ -1,0 +1,42 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.13.15, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\HishamM2\OneDrive - Vodafone Group\Desktop\ai-review-bot\backend\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\HishamM2\OneDrive - Vodafone Group\Desktop\ai-review-bot\backend
+configfile: pytest.ini
+plugins: anyio-4.15.1, asyncio-1.4.0, cov-7.1.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 31 items
+
+tests/test_reviewer.py::test_valid_comment_kept PASSED                   [  3%]
+tests/test_reviewer.py::test_invalid_line_dropped PASSED                 [  6%]
+tests/test_reviewer.py::test_duplicates_removed PASSED                   [  9%]
+tests/test_reviewer.py::test_reprompt_on_bad_json PASSED                 [ 12%]
+tests/test_reviewer.py::test_llm_failure_degrades_gracefully PASSED      [ 16%]
+tests/test_reviewer.py::test_ignored_path_skipped PASSED                 [ 19%]
+tests/test_reviewer.py::test_fenced_json_parsed PASSED                   [ 22%]
+tests/test_reviewer.py::test_invalid_output_raises PASSED                [ 25%]
+tests/test_reviewer.py::test_empty_output_raises PASSED                  [ 29%]
+tests/test_reviewer.py::test_standards_invalid_yaml PASSED               [ 32%]
+tests/test_reviewer.py::test_standards_rules_for PASSED                  [ 35%]
+tests/test_reviewer.py::test_standards_missing_file_falls_back_to_default PASSED [ 38%]
+tests/test_reviewer.py::test_llm_client_retries_then_raises PASSED       [ 41%]
+tests/test_github_prompt.py::test_format_comment_includes_rule_and_suggestion PASSED [ 45%]
+tests/test_github_prompt.py::test_summary_reports_failed_chunks PASSED   [ 48%]
+tests/test_github_prompt.py::test_summary_counts_issues PASSED           [ 51%]
+tests/test_github_prompt.py::test_prompt_marks_diff_as_untrusted PASSED  [ 54%]
+tests/test_github_prompt.py::test_prompt_without_rules_has_default PASSED [ 58%]
+tests/test_github_prompt.py::test_typescript_rules_in_prompt PASSED      [ 61%]
+tests/test_github_prompt.py::test_build_user_prompt_renders_each_file PASSED [ 64%]
+tests/test_clients.py::test_llm_success PASSED                           [ 67%]
+tests/test_clients.py::test_llm_429_raises_rate_limit PASSED             [ 70%]
+tests/test_clients.py::test_llm_http_error_raises_unavailable PASSED     [ 74%]
+tests/test_clients.py::test_llm_timeout_raises_unavailable PASSED        [ 77%]
+tests/test_clients.py::test_llm_retries_then_succeeds PASSED             [ 80%]
+tests/test_clients.py::test_get_diff_ok PASSED                           [ 83%]
+tests/test_clients.py::test_get_diff_http_error PASSED                   [ 87%]
+tests/test_clients.py::test_get_diff_network_error PASSED                [ 90%]
+tests/test_clients.py::test_post_review_ok PASSED                        [ 93%]
+tests/test_clients.py::test_post_review_422_falls_back_to_summary PASSED [ 96%]
+tests/test_clients.py::test_post_review_server_error PASSED              [100%]
+
+============================= 31 passed in 0.42s ==============================

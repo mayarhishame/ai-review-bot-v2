@@ -1,0 +1,20 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.13.15, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\HishamM2\OneDrive - Vodafone Group\Desktop\ai-review-bot\backend\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\HishamM2\OneDrive - Vodafone Group\Desktop\ai-review-bot\backend
+configfile: pytest.ini
+plugins: anyio-4.15.1, asyncio-1.4.0, cov-7.1.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 9 items
+
+tests/test_diff_parser.py::test_parses_all_files PASSED                  [ 11%]
+tests/test_diff_parser.py::test_language_detection PASSED                [ 22%]
+tests/test_diff_parser.py::test_typescript_detected_and_reviewable PASSED [ 33%]
+tests/test_diff_parser.py::test_line_numbers_for_added_lines PASSED      [ 44%]
+tests/test_diff_parser.py::test_skips_lockfiles_and_binaries PASSED      [ 55%]
+tests/test_diff_parser.py::test_new_and_deleted_file_flags PASSED        [ 66%]
+tests/test_diff_parser.py::test_chunking_splits_on_budget PASSED         [ 77%]
+tests/test_diff_parser.py::test_chunking_keeps_all_in_one_when_budget_is_large PASSED [ 88%]
+tests/test_diff_parser.py::test_empty_diff PASSED                        [100%]
+
+============================== 9 passed in 0.03s ==============================
